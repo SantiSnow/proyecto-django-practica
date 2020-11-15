@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Mi Aplicacion Django</title>
+</head>
+<body>
+
+    <h1>Bienvenido al sitio</h1>
+
+    <p>Estos son los datos de contacto:</p>
+
+    {% if Datos_contacto %}
+        <ul>
+            {# los metodos no llevan () al final #}
+            {% for i, j in Datos_contacto.items %}
+                <li>{{ i }}: {{ j }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay datos de contacto actualmente.</p>
+    {% endif %}
+</body>
+</html>
