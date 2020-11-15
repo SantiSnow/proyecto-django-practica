@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Mi Aplicacion Django</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    {% include "layouts/navbar.html" %}
+</div>
+<br />
+<div class="container">
+    <h1>Bienvenido al sitio</h1>
+
+    <p>Esta es mi aplicación en django</p>
+    <h3>Articulos:</h3>
+
+    <ul>
+        {% for i, j in articulos.items %}
+            <li>{{ i }}: {{ j }}</li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

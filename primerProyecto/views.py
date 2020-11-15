@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.template import loader
+from django.shortcuts import render
 import datetime
 
 
@@ -43,3 +44,15 @@ def about(request):
     documento = plantilla.render(contexto)
 
     return HttpResponse(documento)
+
+
+def articulos(request):
+    contexto = {
+        "articulos": {
+            1: "Primer articulo",
+            2: "Segundo articulo",
+            3: "Tercer articulo"
+        }
+    }
+
+    return render(request, 'template4.html', contexto)
